@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import  Weapon  from './components/Weapon';
 
-function App() {
+
+
+const App: React.FC = () => {
+  const weapons = [
+    { name: 'Sword', damage: 10 },
+    { name: 'Axe', damage: 15 },
+    { name: 'Bow', damage: 7 },
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container mx-auto p-4">
+      <h1 className="text-3x1 front-bold mb-4">Weapon Battle Game</h1>
+  <div>
+
+  </div>
+    <h2 className="text-xl front-bold mb-2">Your Weapons</h2>
+    {weapons.map((weapon) => (
+      <Weapon key={weapon.name} name={weapon.name} damage={weapon.damage} />
+    ))}
+    <div/>
     </div>
   );
-}
 
-export default App;
+    };
+
+    export default App;
