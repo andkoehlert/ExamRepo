@@ -4,7 +4,7 @@ import React from 'react';
 
 interface WeaponProps {
   name: string;
-  damage: number;
+  damage: string;
 }
 
 const Weapon: React.FC<WeaponProps> = ({ name, damage }) => {
