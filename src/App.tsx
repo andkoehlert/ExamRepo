@@ -59,7 +59,7 @@ const App: React.FC = () => {
   return (
     <div className="flex flex-col justify-center items-center h-screen">
       <div>
-      <h1 className="text-3xl font-bold mb-4">Weapon Battle Game</h1>
+      <h1 className="text-3xl font-bold mb-4">The Greatest D&D Game Of All Time</h1>
 
       </div>
       <div className="flex flex-row justify-center items-center h-screen gap-40 ">
