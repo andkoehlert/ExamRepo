@@ -13,11 +13,7 @@ const Weapon: React.FC<WeaponProps> = ({ name, damage }) => {
   };
 
   return (
-    <div
-      draggable
-      onDragStart={handleDragStart}
-      className="border p-2 m-2 cursor-grab"
-    >
+    <div draggable onDragStart={handleDragStart} className="border p-2 m-2 cursor-grab">
       <strong>{name}</strong> (damage: {damage})
     </div>
   );
