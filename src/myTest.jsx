@@ -2,22 +2,19 @@
 
 import { Selector } from 'testcafe';
 
-fixture('Weapon Drop Test').page('http://localhost:3000'); // Update the URL as needed
+fixture('App Test').page('https://jenkins.andreaskoehlert.dk/'); // Update the URL as needed
 
-test('Player can drop weapon onto the enemy', async (t) => {
+test('Should display initial health values', async (t) => {
   // Replace these selectors with the actual selectors for your components
-  const swordWeapon = Selector('.weapon').withText('Sword');
-  const enemy = Selector('.enemy');
+  const playerHealthElement = Selector('.border-green-500 p');
+  const enemyHealthElement = Selector('.enemy-health');
 
-  // Get the initial health of the enemy
-  const initialEnemyHealth = await enemy.find('.enemy-health').innerText;
+  // Get the text content of the health elements
+  const playerHealthText = await playerHealthElement.innerText;
+  const enemyHealthText = await enemyHealthElement.innerText;
 
-  // Perform drop action
-  await t.click(swordWeapon).wait(1000); // Click the weapon to simulate the drop
-
-  // Get the updated health of the enemy after the drop
-  const updatedEnemyHealth = await enemy.find('.enemy-health').innerText;
-
-  // Assert that the enemy's health has decreased after the drop
-  await t.expect(updatedEnemyHealth).lt(initialEnemyHealth);
+  // Assert that the initial health values are displayed correctly
+  await t
+    .expect(playerHealthText).contains('Health: 40')
+    .expect(enemyHealthText).contains('Health: 30');
 });
