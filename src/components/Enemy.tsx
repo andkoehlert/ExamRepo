@@ -20,9 +20,9 @@ const Enemy: React.FC<EnemyProps> = ({ onDrop, health, children }) => {
   };
 
   return (
-    <div onDrop={handleDrop} onDragOver={handleDragOver} className="border-2 border-red-500 p-4 mb-4">
+    <div onDrop={handleDrop} onDragOver={handleDragOver} className="enemy border-2 border-red-500 p-4 mb-4">
       <h2 className="text-xl font-bold mb-2">Enemy</h2>
-      <p>Health: {health}</p>
+      <p className="enemy-health">Health: {health}</p>
       {children}
     </div>
   );
