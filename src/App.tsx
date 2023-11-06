@@ -11,13 +11,14 @@ const App: React.FC = () => {
     { name: 'Bow', minDamage: 3, maxDamage: 7 },
   ];
 
-  const [playerHealth, setPlayerHealth] = useState(40);
+  const [playerHealth, setPlayerHealth] = useState(30);
   const [enemyHealth, setEnemyHealth] = useState(30);
   const [isPlayerTurn, setIsPlayerTurn] = useState(true);
   const [isEnemyTurn, setIsEnemyTurn] = useState(false);
+  const [isEnemyAlive, setIsEnemyAlive] = useState(true);
 
   const handleWeaponDrop = (weaponName: string) => {
-    if (!isPlayerTurn) return; // Ignore drops during the enemy's turn
+    if (!isPlayerTurn || !isEnemyAlive) return; // Ignore drops during enemy's turn or if the enemy is already defeated
 
     // Find the weapon in the weapons array
     const selectedWeapon = weapons.find((weapon) => weapon.name === weaponName);
@@ -44,17 +45,32 @@ const App: React.FC = () => {
 
   // Simulate the enemy's turn
   React.useEffect(() => {
-    if (isEnemyTurn) {
+    if (isEnemyAlive && isEnemyTurn && playerHealth > 0 && enemyHealth > 0) {
       // Implement the logic for the enemy's turn here
-      // For simplicity, let's assume the enemy always attacks with a fixed damage
       const enemyDamage = 8;
+  
+      // Use the functional form of setPlayerHealth to ensure the latest state is used
       setPlayerHealth((prevHealth) => Math.max(prevHealth - enemyDamage, 0));
-
+  
       // Toggle turns after the enemy has made its move
       setIsPlayerTurn(true);
       setIsEnemyTurn(false);
     }
-  }, [isEnemyTurn]);
+  }, [isEnemyTurn, isEnemyAlive, playerHealth, enemyHealth, setPlayerHealth]);
+  
+
+  React.useEffect(() => {
+    if (enemyHealth === 0) {
+      setIsEnemyAlive(false);
+  
+      // Use setTimeout to delay the alert and allow the enemy health to update
+      setTimeout(() => {
+        alert('Congratulations! You defeated the enemy!');
+        // Refresh the page to start over
+        window.location.reload();
+      }, 0);
+    }
+  }, [enemyHealth]);
 
   return (
     <div className="flex flex-col justify-center items-center h-screen">
