@@ -5,13 +5,20 @@ import Enemy from './components/Enemy';
 // This is a type definition that says our component is a Functional Component
 const App: React.FC = () => {
 
-  // We're creating an array of weapons with different characteristics
+  // creating an array of weapons with different characteristics - explicit
   const weapons: { name: string; minDamage: number; maxDamage: number }[] = [
   { name: 'Sword', minDamage: 5, maxDamage: 10 },
   { name: 'Axe', minDamage: 8, maxDamage: 15 },
   { name: 'Bow', minDamage: 3, maxDamage: 7 },
 ];
 
+// implicit example
+/* const weapons = [
+  { name: 'Sword', minDamage: 5, maxDamage: 10 },
+  { name: 'Axe', minDamage: 8, maxDamage: 15 },
+  { name: 'Bow', minDamage: 3, maxDamage: 7 },
+];
+ */
 
   // These are like containers that hold information about the game state
   const [playerHealth, setPlayerHealth] = useState(30);
