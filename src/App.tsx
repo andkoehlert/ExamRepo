@@ -83,7 +83,7 @@ const App: React.FC = () => {
   return (
     <div className="flex m-10  flex-col justify-center items-center h-screen">
       <div>
-        <h1 className="text-3xl font-bold mb-4">The Greatest D&D Game Of All Time</h1>
+        <h1 className="text-3xl font-bold mb-4">The Greatest D&D Game Of All Time test</h1>
       </div>
       <div className="md:flex md:py-0 py-6 flex-row justify-center items-center h-screen gap-40 ">
         <div className="flex  md:flex-row flex-col items-center border-2">
