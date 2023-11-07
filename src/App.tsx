@@ -74,12 +74,12 @@ const App: React.FC = () => {
 
   // The return statement describes what the component will render
   return (
-    <div className="flex flex-col justify-center items-center h-screen">
+    <div className="flex m-10  flex-col justify-center items-center h-screen">
       <div>
         <h1 className="text-3xl font-bold mb-4">The Greatest D&D Game Of All Time</h1>
       </div>
-      <div className="flex flex-row justify-center items-center h-screen gap-40 ">
-        <div className="flex flex-row items-center border-2">
+      <div className="md:flex md:py-0 py-6 flex-row justify-center items-center h-screen gap-40 ">
+        <div className="flex  md:flex-row flex-col items-center border-2">
           <div className="border-2 border-green-500 p-4 mb-4">
             {/* Display the player's health */}
             <p>Health: {playerHealth}</p>
