@@ -29,7 +29,7 @@ test('Should display the correct title', async (t) => {
   const titleText = await titleElement.innerText;
 
   // Assert that the title text is as expected (matching the actual case in your app)
-  await t.expect(titleText).eql('The Greatest D&D Game Of All time better than baldurs gate');
+  await t.expect(titleText).eql('The Greatest D&D Game Of All time');
 });
 
 // Tried to make a test for dropping axe on enemy, but it doesn't work
