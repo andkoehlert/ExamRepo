@@ -8,17 +8,26 @@ test('Should display initial health values', async (t) => {
 // My selectors
   const playerHealthElement = Selector('.border-green-500 p'); // Update the selector
   const enemyHealthElement = Selector('.enemy-health');
-  const titleElement = Selector('h1.D&D');
 
   // Get the innertext
   const playerHealthText = await playerHealthElement.innerText;
   const enemyHealthText = await enemyHealthElement.innerText;
-  const titleText = await titleElement.innerText;
 
   // make an assertion
   await t
   .expect(playerHealthText).contains('Health: 30')
   .expect(enemyHealthText).contains('Health: 30');
-  await t.expect(titleText).eql('The Greatest D&D Game Of All time');
 
+});
+
+
+test('Should display the correct title', async (t) => {
+  // Define a selector for the title element
+  const titleElement = Selector('.DandD');
+
+  // Get the text content of the title element
+  const titleText = await titleElement.innerText;
+
+  // Assert that the title text is as expected (matching the actual case in your app)
+  await t.expect(titleText).eql('The Greatest D&D Game Of All Time');
 });
