@@ -17,6 +17,7 @@ const App: React.FC = () => {
     { name: 'Sword', minDamage: 5, maxDamage: 10 },
     { name: 'Axe', minDamage: 8, maxDamage: 15 },
     { name: 'Bow', minDamage: 3, maxDamage: 7 },
+
   ];
   
   //This was my first apporch to create the weapons array
@@ -133,7 +134,7 @@ const handleWeaponDrop: HandleWeaponDrop = (weaponName) => {
               key={weapon.name}
               name={weapon.name}
               damage={`${weapon.minDamage}-${weapon.maxDamage}`}
-            />
+              className="Axe"            />
           ))}
         </div>
         <div>

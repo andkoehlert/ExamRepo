@@ -6,6 +6,8 @@ import React from 'react';
 interface WeaponProps {
   name: string;  // The name of the weapon
   damage: string;  // The damage range of the weapon
+  className?: string; // Add className as an optional prop
+
 }
 
 // This is the Weapon component, declared as a Functional Component
