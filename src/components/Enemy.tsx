@@ -1,6 +1,7 @@
 import React, { DragEvent } from 'react';
 
 // This defines the expected properties (props) that the Enemy component should receive
+// Interface Alias
 interface EnemyProps {
   onDrop: (weaponName: string) => void;  // A function to handle when a weapon is dropped on the enemy
   health: number;  // The health of the enemy

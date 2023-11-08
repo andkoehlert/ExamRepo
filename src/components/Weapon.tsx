@@ -1,6 +1,8 @@
 import React from 'react';
 
 // This defines the expected properties (props) that the Weapon component should receive
+// Interface Alias
+
 interface WeaponProps {
   name: string;  // The name of the weapon
   damage: string;  // The damage range of the weapon
@@ -22,4 +24,4 @@ const Weapon: React.FC<WeaponProps> = ({ name, damage }) => {
   );
 };
 
-export default Weapon;  // Export the Weapon component to use it in other parts of the application
+export default Weapon;  
