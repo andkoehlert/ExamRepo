@@ -21,7 +21,7 @@ test('Should display initial health values', async (t) => {
 });
 
 
-/* test('Should display the correct title', async (t) => {
+test('Should display the correct title', async (t) => {
   // Define a selector for the title element
   const titleElement = Selector('.DandD');
 
@@ -29,5 +29,5 @@ test('Should display initial health values', async (t) => {
   const titleText = await titleElement.innerText;
 
   // Assert that the title text is as expected (matching the actual case in your app)
-  await t.expect(titleText).eql('The Greatest D&D Game Of All Time');
-}); */
+  await t.expect(titleText).eql('The Greatest D&D Game Of All time');
+});
