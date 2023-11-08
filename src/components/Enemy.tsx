@@ -1,10 +1,12 @@
 import React, { DragEvent } from 'react';
 
 // This defines the expected properties (props) that the Enemy component should receive
+// Interface Alias
 interface EnemyProps {
   onDrop: (weaponName: string) => void;  // A function to handle when a weapon is dropped on the enemy
   health: number;  // The health of the enemy
   children: React.ReactNode;  // Additional content that can be added inside the Enemy component
+  className?: string; // Add className as an optional prop
 }
 
 // This is the Enemy component, declared as a Functional Component
