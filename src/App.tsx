@@ -9,7 +9,6 @@ import Enemy from './components/Enemy';
 // FUNCTION SIGNATURES
 // INTERFACES 
 
-// This is a type definition that says our component is a Functional Component
 // This is typescript Type Aliases that im using now
 // Weapon type is a union type that can be either MeleeWeapon or RangedWeapon
 // a union type allows a variable to have one of several types by using the pipe operator (|) to separate each type.
@@ -95,10 +94,9 @@ const handleWeaponDrop: HandleWeaponDrop = (weaponName) => {
     }
   };
  */
-  // Simulate the enemy's turn
+  // enemy's turn
   React.useEffect(() => {
     if (enemyHealth === 0) {
-      // If the enemy has no more health, we set it as defeated and show a victory message
       setIsEnemyAlive(false);
 
       // Use setTimeout to delay the alert and allow the enemy health to update
@@ -109,15 +107,12 @@ const handleWeaponDrop: HandleWeaponDrop = (weaponName) => {
       }, 0);
     }
 
-    // If the enemy is still alive, it attacks the player
     if (isEnemyAlive && isEnemyTurn && playerHealth > 0 && enemyHealth > 0) {
-      // For simplicity, let's assume the enemy always attacks with a fixed damage
       const enemyDamage = 8;
 
       // We update the player's health based on the enemy's attack
       setPlayerHealth((prevHealth) => Math.max(prevHealth - enemyDamage, 0));
 
-      // It's now the player's turn again, and the enemy can't attack until the player finishes their turn
       setIsPlayerTurn(true);
       setIsEnemyTurn(false);
     }
@@ -129,7 +124,6 @@ const handleWeaponDrop: HandleWeaponDrop = (weaponName) => {
       <div>
         <h1 className="DandD text-3xl font-bold mb-4">The Greatest D&D Game Of All time better than baldurs gate</h1>
       </div>
-      <h1>maybe not better than baldurs gate</h1>
     <div className="md:flex md:py-0 py-6 flex-row justify-center items-center h-screen gap-40 ">
         <div className="flex  md:flex-row flex-col items-center border-2">
           <div className="border-2 border-green-500 p-4 mb-4">
@@ -156,5 +150,4 @@ const handleWeaponDrop: HandleWeaponDrop = (weaponName) => {
   );
 };
 
-// This exports the App component so that it can be used in other parts of the application
 export default App;
