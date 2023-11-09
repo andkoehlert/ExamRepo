@@ -2,6 +2,13 @@ import React, { useState } from 'react';
 import Weapon from './components/Weapon';
 import Enemy from './components/Enemy';
 
+// TYPE ALIASES
+// UNION TYPES
+// ARRAY & OBJECT TYPES
+// EXPLICIT VS IMPLICIT TYPES
+// FUNCTION SIGNATURES
+// INTERFACES 
+
 // This is a type definition that says our component is a Functional Component
 // This is typescript Type Aliases that im using now
 // Weapon type is a union type that can be either MeleeWeapon or RangedWeapon
@@ -122,7 +129,7 @@ const handleWeaponDrop: HandleWeaponDrop = (weaponName) => {
       <div>
         <h1 className="DandD text-3xl font-bold mb-4">The Greatest D&D Game Of All time better than baldurs gate</h1>
       </div>
-
+<h1>Maybe not better than baldurs gate 3</h1>
     <div className="md:flex md:py-0 py-6 flex-row justify-center items-center h-screen gap-40 ">
         <div className="flex  md:flex-row flex-col items-center border-2">
           <div className="border-2 border-green-500 p-4 mb-4">
