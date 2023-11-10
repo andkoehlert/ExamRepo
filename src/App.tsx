@@ -124,6 +124,7 @@ const handleWeaponDrop: HandleWeaponDrop = (weaponName) => {
       <div>
         <h1 className="DandD text-3xl font-bold mb-4">The Greatest D&D Game Of All time better than baldurs gate</h1>
       </div>
+      <h1>maybe not the best d&D game</h1>
     <div className="md:flex md:py-0 py-6 flex-row justify-center items-center h-screen gap-40 ">
         <div className="flex  md:flex-row flex-col items-center border-2">
           <div className="border-2 border-green-500 p-4 mb-4">
